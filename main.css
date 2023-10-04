@@ -1,22 +1,119 @@
 * {
     margin: 0;
     padding: 0;
+    /* outline: 2px solid white; */
+}
+
+:root {
+    --primary-bg-clr : hsl(300, 100%, 50%);
+    --accent-clr : hsl(300, 100%, 65%);
+    --primary-text-clr : beige;
+    --hover-clr :  hsl(300, 100%, 45%);
+    --h1-height : calc(9vh + .5em);
+    --primary-fs : calc(1em + 1vw);
 }
 
 body {
-    background-color: fuchsia;
-    color: beige;
+    background-color: var(--primary-bg-clr);
+    color: var(--primary-text-clr);
+    font-size: var(--primary-fs);
 }
 
 h1 {
     text-align: center;
+    height: var(--h1-height);
+}
+
+button {
+    cursor: pointer;
+}
+
+/* currently turned off display cos it was distracting */
+.sec-one {
+    height: calc(100vh - var(--h1-height));
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    /* display: none; */
+}
+
+.sec-two, .sec-three {
+    height: 100vh;
+    /* display: none; */
+}
+
+.sec-one button {
+    background-color: var(--accent-clr);
+    border: 3px solid beige;
+    color: var(--primary-text-clr);
+    display: block;
+    font-weight: 800;
+    font-size: 1em;
+    width: min(95%, 500px);
+    margin: 1em auto;
+    padding: 1rem 0;
+    border-radius: .5em;
+    text-align: center;
+    transition: .3s ease-in-out;
+}
+
+.vsComp:is(:hover, :active, :focus),
+.vsHuman:is(:hover, :active, :focus)
+ {
+    letter-spacing: .2em;
+    padding: 1em 1.5em;
+}
+
+/* SECOND VIEW */
+.sec-two {
+    border: 1px solid white;
+    display: flex;
+    /* inviscible */
+    /* display: none; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: calc(var(--primary-fs) + .5em);
+}
+
+
+.options {
+    margin-top: 1.5em;
+    gap: 1em;
+}
+
+.options button {
+    display: inline-block;
+    /* width: 100px; */
+    padding: .7em;
+    border: 2px solid var(--primary-text-clr);
+    background-color: var(--accent-clr);
+    transition: .3s ease-in-out;
+    border-radius: .3em;
+    font-size: 1.3rem;
+}
+
+.x:is(:hover, :active, :focus),
+.o:is(:hover, :active, :focus) {
+    /* width: 130px; */
+    padding: 1em 1.3em;
+}
+
+/* 3rd view */
+
+.sec-three {
+    display: flex;
+    align-items: center;
 }
 
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
-    border: 5px solid beige;
+    border: 5px solid var(--primary-text-clr);
     max-width: fit-content;
     margin: 1em auto;
     overflow: hidden;
@@ -24,5 +121,6 @@ h1 {
 }
 
 .box {
-    border: 2px solid beige;
+    cursor: pointer;
+    border: 2px solid var(--primary-text-clr);
 }
