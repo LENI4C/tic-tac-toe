@@ -71,8 +71,6 @@ button {
 .sec-two {
     border: 1px solid white;
     display: flex;
-    /* inviscible */
-    /* display: none; */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -81,13 +79,14 @@ button {
 
 
 .options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
     margin-top: 1.5em;
-    gap: 1em;
 }
 
 .options button {
-    display: inline-block;
-    /* width: 100px; */
     padding: .7em;
     border: 2px solid var(--primary-text-clr);
     background-color: var(--accent-clr);
@@ -100,6 +99,7 @@ button {
 .o:is(:hover, :active, :focus) {
     /* width: 130px; */
     padding: 1em 1.3em;
+    font-size: 1.5rem;
 }
 
 /* 3rd view */

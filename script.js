@@ -1,21 +1,18 @@
-const box = document.querySelector("div:not(.board)")
-
+const box = document.querySelectorAll(".box")
 const userChoiceX = document.querySelector(".x")
 const userChoiceO = document.querySelector(".o")
 const board = document.querySelector(".board")
-let userChoice = ""
+let userChoice = null
 
 userChoiceX.addEventListener("click", () => {
     userChoice = "❌"
-    console.log(userChoice)
 })
 
 userChoiceO.addEventListener("click", () => {
     userChoice = "⭕"
-    console.log(userChoice)
 })
 
-board.addEventListener("click", (e) => {
+
+box.addEventListener("click", (e) => {
     e.target.textContent = userChoice
 })
-
