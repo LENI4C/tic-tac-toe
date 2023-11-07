@@ -9,7 +9,7 @@
     --accent-clr : hsl(300, 100%, 65%);
     --primary-text-clr : beige;
     --hover-clr :  hsl(300, 100%, 45%);
-    --h1-height : calc(9vh + .5em);
+    --h1-height : 9vh;
     --primary-fs : calc(1em + 1vw);
 }
 
@@ -30,19 +30,15 @@ button {
 
 /* currently turned off display cos it was distracting */
 .sec-one {
-    height: calc(100vh - var(--h1-height));
-    border: 2px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    /* display: none; */
 }
 
-.sec-two, .sec-three {
+.sec-one, .sec-two, .sec-three {
     height: 100vh;
-    /* display: none; */
 }
 
 .sec-one button {
@@ -61,16 +57,16 @@ button {
 }
 
 .vsComp:is(:hover, :active, :focus),
-.vsHuman:is(:hover, :active, :focus)
+.vsHum:is(:hover, :active, :focus)
  {
     letter-spacing: .2em;
     padding: 1em 1.5em;
+    outline-color: var(--hover-clr);
 }
 
 /* SECOND VIEW */
 .sec-two {
-    border: 1px solid white;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -97,7 +93,6 @@ button {
 
 .x:is(:hover, :active, :focus),
 .o:is(:hover, :active, :focus) {
-    /* width: 130px; */
     padding: 1em 1.3em;
     font-size: 1.5rem;
 }
@@ -105,7 +100,7 @@ button {
 /* 3rd view */
 
 .sec-three {
-    display: flex;
+    display: none;
     align-items: center;
 }
 
