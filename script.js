@@ -12,12 +12,11 @@ let userChoice = null
 
 // ## VIEW 3 ##
 const viewThree = document.querySelector(".sec-three")
-const box = document.querySelectorAll(".box")
+const boxes = document.querySelectorAll(".box")
 const board = document.querySelector(".board")
 
 
 
-if (userVs == null) {
             
     vsCompBtn.addEventListener("click", () => {
         userVs = vsCompBtn
@@ -48,4 +47,10 @@ if (userVs == null) {
         viewOne.style.display = "none"
         viewThree.style.display = "flex"
     })
-} 
+
+        
+    boxes.forEach((box) => {
+        box.addEventListener("click", (e) => {
+            e.target.style.backgroundColor = "green"
+        })
+    })
